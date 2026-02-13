@@ -1,0 +1,125 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<meta charset="UTF-8">  
+<title>Para Mi Niña Linda 🌷</title>  
+  
+<style>  
+body{  
+margin:0;  
+font-family:Arial, sans-serif;  
+background:linear-gradient(to bottom,#ffe6f5,#ffcce6);  
+text-align:center;  
+color:#b30059;  
+overflow:hidden;  
+}  
+  
+button{  
+margin-top:100px;  
+padding:15px 30px;  
+border:none;  
+border-radius:30px;  
+background:#ff66b2;  
+color:white;  
+font-size:18px;  
+cursor:pointer;  
+}  
+  
+.carta{  
+display:none;  
+margin-top:40px;  
+background:white;  
+padding:40px;  
+border-radius:30px;  
+width:85%;  
+margin-left:auto;  
+margin-right:auto;  
+box-shadow:0 0 25px rgba(0,0,0,0.2);  
+font-family:"Brush Script MT", cursive;  
+font-size:24px;  
+line-height:1.7;  
+}  
+  
+.flor{  
+position:fixed;  
+top:-10px;  
+animation:fall linear infinite;  
+pointer-events:none;  
+}  
+  
+@keyframes fall{  
+to{ transform:translateY(100vh); }  
+}  
+</style>  
+</head>  
+  
+<body>  
+  
+<button onclick="mostrarCarta()">🌷 Abrir Mi Carta 🌷</button>  
+  
+<div class="carta" id="cartaFinal">  
+Mi niña linda, te amo con todo mi corazón.    
+Perdón por no poder estar este día contigo, pero solo quiero que sepas que mi amor y mi corazón siempre lo estarán.    
+  
+Mi vida, siempre están y van a estar contigo, para siempre.    
+Te amo muchísimo mi vida.    
+  
+Me hace muy feliz poder compartir un San Valentín más contigo.    
+Espero que podamos compartir muchos más, mi amor, así juntitos.    
+  
+Mi niña linda, tal vez ahora no puedo darte nada lindo mi amor,    
+pero esta cartita está hecha con todo mi cocoro.    
+  
+Mi amor mío, te amo con toda mi alma mi reina.    
+Espero poder mejorar más para hacerte muy feliz mi princesa.    
+  
+Te amo mucho, mucho.    
+Gracias por estar conmigo en un San Valentín más.    
+  
+TE AMO.    
+  
+Al próximo, mi amor, te daré algo muy lindo    
+y te llenaré de flores mi reina,    
+tal como mi princesa merece.    
+  
+TE AMO 🌷  
+</div>  
+  
+<!-- Música -->  
+<audio id="musica" loop>  
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_3c7f3fdb8f.mp3" type="audio/mpeg">  
+</audio>  
+  
+<script>  
+function mostrarCarta(){  
+document.querySelector("button").style.display="none";  
+document.getElementById("cartaFinal").style.display="block";  
+document.getElementById("musica").play();  
+iniciarFlores();  
+}  
+  
+function iniciarFlores(){  
+setInterval(()=>{  
+let flor=document.createElement("div");  
+flor.className="flor";  
+  
+let tipo=Math.random();  
+  
+if(tipo<0.6){  
+    flor.innerHTML="🌷";  
+    flor.style.fontSize="40px";  
+}else{  
+    flor.innerHTML="🌸";  
+    flor.style.fontSize="28px";  
+}  
+  
+flor.style.left=Math.random()*100+"vw";  
+flor.style.animationDuration=(Math.random()*4+6)+"s";  
+document.body.appendChild(flor);  
+setTimeout(()=>flor.remove(),10000);  
+},500);  
+}  
+</script>  
+  
+</body>  
+</html>
